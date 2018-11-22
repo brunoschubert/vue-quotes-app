@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <app-header :quoteCount="quotes.length" :maxQuotes="maxQuotes"></app-header>
         <app-new-quote v-on="quoteAdded"></app-new-quote>
        <app-quote-grid :quotes="quotes" @quoteDeleted="deleteQuote"></app-quote-grid> 
        <div class="row">
@@ -33,7 +34,8 @@
         },
         components: {
             appQuoteGrid: QuoteGrid,
-            appNewQuote: NewQuote
+            appNewQuote: NewQuote,
+            appHeader: Header
         }
     }
 </script>
