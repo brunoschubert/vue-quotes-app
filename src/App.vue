@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <app-new-quote></app-new-quote>
+        <app-new-quote v-on="quoteAdded($event)"></app-new-quote>
        <app-quote-grid :quotes="quotes"></app-quote-grid> 
     </div>
 </template>
@@ -16,6 +16,11 @@
                     'A simple quote'
                 ],
                 maxQuotes: 10
+            }
+        },
+        methods: {
+            newQuote(quote){
+                this.quotes.push(quote);
             }
         },
         components: {
